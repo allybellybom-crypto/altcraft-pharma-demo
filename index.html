@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>МедПортал - материалы для специалистов</title>
+<!-- Altcraft Tag Manager container (вставить код контейнера сюда) -->
+<!-- Altcraft pixel (вставить код пикселя сюда) -->
+<style>
+:root{--bg:#f2f5f8;--card:#fff;--ink:#17293d;--muted:#66788c;--accent:#0e7c66;--accent2:#1456a0;--line:#dfe7ee}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+header{position:sticky;top:0;z-index:50;background:var(--ink);color:#fff;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.brand{font-size:17px;font-weight:600;letter-spacing:.01em}
+.badge{font-size:11px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:3px 10px;color:#b9d2f2}
+.login-link{font-size:13.5px;color:#b9d2f2;text-decoration:none;border:1px solid #3a4f6f;border-radius:8px;padding:7px 14px}
+.login-link:hover{background:rgba(255,255,255,.08)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.hero{padding:36px 0 8px}
+.hero h1{font-size:28px;line-height:1.3;margin-bottom:10px}
+.hero p{color:var(--muted);font-size:15px;max-width:720px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px 28px;margin:18px 0}
+.kicker{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);font-weight:700;margin-bottom:8px}
+.card h2{font-size:19px;margin-bottom:6px}
+.card .meta{color:var(--muted);font-size:13px;margin-bottom:12px}
+.card p{margin-bottom:12px;color:#2c405a}
+.actions{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+.btn{border:none;border-radius:9px;padding:11px 20px;font-size:14px;font-weight:600;cursor:pointer;transition:transform .06s}
+.btn:active{transform:scale(.98)}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.primary:hover{background:#0a6654}
+.btn.second{background:#e7eef5;color:var(--accent2)}
+.btn.second:hover{background:#dbe7f2}
+.webinars{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.webinar{border:1px solid var(--line);border-radius:12px;padding:18px;background:#fff}
+.webinar h3{font-size:15.5px;margin-bottom:6px}
+.webinar .meta{color:var(--muted);font-size:12.5px;margin-bottom:10px}
+.webinar p{font-size:13.5px;color:#2c405a;margin-bottom:12px}
+.webinar .btn{padding:8px 14px;font-size:13px}
+.nps-scale{display:flex;gap:6px;margin:14px 0 10px;flex-wrap:wrap}
+.nps-scale button{width:38px;height:38px;border-radius:9px;border:1px solid var(--line);background:#fff;font-size:14px;font-weight:600;color:var(--ink);cursor:pointer}
+.nps-scale button:hover{border-color:var(--accent);color:var(--accent)}
+.nps-result{min-height:22px;font-size:14px;color:var(--accent);font-weight:600}
+footer{margin-top:36px;padding:22px 0 34px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line)}
+#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:#fff;padding:12px 22px;border-radius:12px;font-size:14px;transition:transform .3s;z-index:200;box-shadow:0 8px 30px rgba(0,0,0,.25);opacity:0;pointer-events:none}
+#toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+@media(max-width:640px){.hero h1{font-size:22px}.card{padding:20px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;width:100%">
+    <div class="brand">МедПортал <span class="badge">демо-стенд</span></div>
+    <a class="login-link" href="#" id="loginLink">Вход для специалистов</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="hero">
+    <h1>Материалы и мероприятия для врачей</h1>
+    <p>Клинические рекомендации, гайды и вебинары по актуальным темам. Материалы обновляются по мере выхода новых данных.</p>
+  </section>
+
+  <article class="card" id="material">
+    <div class="kicker">Материал недели</div>
+    <h2>Сезонная иммунопрофилактика: обновления клинических рекомендаций</h2>
+    <p class="meta">Обзор · 6 минут чтения · терапевтам, педиатрам и врачам общей практики</p>
+    <p>В обновлённых рекомендациях скорректированы группы приоритетной вакцинации и уточнены схемы для пациентов с хроническими заболеваниями. Разобрали ключевые изменения и практические выводы для приёма.</p>
+    <p>Отдельный блок посвящён коммуникации с пациентами: как объяснять пользу профилактики и работать с типовыми возражениями. Материал дополняет запись прошедшего вебинара и короткий гайд для разговоров на приёме.</p>
+    <div class="actions">
+      <button class="btn primary" id="guideBtn">Скачать гайд (PDF)</button>
+      <button class="btn second" id="webinarBtn">Записаться на вебинар</button>
+    </div>
+  </article>
+
+  <section class="card">
+    <div class="kicker">Ближайшие вебинары</div>
+    <div class="webinars">
+      <div class="webinar">
+        <h3>Разбор обновлённых схем вакцинации</h3>
+        <p class="meta">Онлайн · четверг, 18:00 · 60 минут</p>
+        <p>Эксперт отвечает на вопросы по новым схемам и группам приоритета. Запись останется в личном кабинете.</p>
+        <button class="btn second webinar-reg">Зарегистрироваться</button>
+      </div>
+      <div class="webinar">
+        <h3>Коммуникация с пациентом: работа с возражениями</h3>
+        <p class="meta">Онлайн · вторник, 19:00 · 45 минут</p>
+        <p>Практикум для приёма: типовые возражения по вакцинации и скрипты разговора.</p>
+        <button class="btn second webinar-reg">Зарегистрироваться</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="nps">
+    <div class="kicker">Опрос</div>
+    <h2>Оцените полезность материалов</h2>
+    <p style="color:var(--muted);font-size:14px">Насколько вероятно, что вы порекомендуете портал коллегам?</p>
+    <div class="nps-scale" id="npsScale"></div>
+    <div class="nps-result" id="npsResult"></div>
+  </section>
+
+  <footer>
+    Демонстрационная страница. Контент плейсхолдерный, данные не собираются и никуда не передаются. Реальные события пишутся в Altcraft Platform после подключения пикселя и форм.
+  </footer>
+</div>
+<div id="toast"></div>
+<script>
+(function(){
+"use strict";
+function toast(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(function(){t.classList.remove('show');},3000);}
+document.getElementById('loginLink').addEventListener('click',function(e){e.preventDefault();toast('Демо: здесь будет авторизация специалистов (передаёт идентификатор врача в CDP)');});
+document.getElementById('guideBtn').addEventListener('click',function(){toast('Демо: цель "Скачал гайд" уйдёт в CDP, затем попап-вовлечение');});
+document.getElementById('webinarBtn').addEventListener('click',function(){toast('Демо: цель "Регистрация на вебинар" уйдёт в CDP');});
+Array.prototype.forEach.call(document.querySelectorAll('.webinar-reg'),function(b){
+  b.addEventListener('click',function(){toast('Демо: событие "клик по вебинару" уйдёт в CDP');});
+});
+// NPS placeholder: заменяется на форму Altcraft (iframe/ссылка) после настройки
+var scale=document.getElementById('npsScale');
+for(var i=0;i<=10;i++){(function(n){
+  var b=document.createElement('button');b.textContent=n;
+  b.addEventListener('click',function(){
+    var cat=n>=9?'Промоутер':(n>=7?'Нейтрал':'Критик');
+    document.getElementById('npsResult').textContent='Спасибо! Ответ '+n+' ('+cat+') будет записан в профиль.';
+  });
+  scale.appendChild(b);
+})(i);}
+})();
+</script>
+</body>
+</html>
