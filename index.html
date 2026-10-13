@@ -4,7 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>МедПортал - материалы для специалистов</title>
-<!-- Altcraft Tag Manager container (вставить код контейнера сюда) -->
+<!-- Altcraft Tag Manager container -->
+<script>
+    (function (window, document, dataLayerName, containerID) {
+        window[dataLayerName] = window[dataLayerName] || [];
+        window[dataLayerName].push({ 'start': new Date().getTime(), event: 'actm-js' });
+        var firstScript = document.getElementsByTagName('script')[0];
+        var script = document.createElement('script');
+        var dl = dataLayerName !== 'acDataLayer' ? '&l=' + dataLayerName : '';
+        script.async = true;
+        script.src = 'https://pxl.ru.altkraft.com/actm/js/actm.js?id=' + containerID + dl;
+        script.type = 'module';
+        if (firstScript && firstScript.parentNode) {
+            firstScript.parentNode.insertBefore(script, firstScript);
+        }
+    }(window, document, 'acDataLayer', 'ATM-cw5SJEpxxOtxX5pP'));
+</script>
 <!-- Altcraft pixel (вставить код пикселя сюда) -->
 <style>
 :root{--bg:#f2f5f8;--card:#fff;--ink:#17293d;--muted:#66788c;--accent:#0e7c66;--accent2:#1456a0;--line:#dfe7ee}
